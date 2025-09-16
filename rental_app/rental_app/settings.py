@@ -38,8 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+ 'rest_framework.authtoken',
     'oauth2_provider',
     'api',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'rental_app.urls'
@@ -112,7 +115,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
+# Dev: cho phép tất cả origin
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
@@ -133,3 +137,5 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     ],
 }
+OAUTH2_CLIENT_ID = "hFr6I5PMMT2Lu1xkYcXXHa55utzuqfhgTazEgQbp"
+OAUTH2_CLIENT_SECRET = "FI2X5zx3Ajmrib9GZVRQICF4vximiv3LTfvOivIt5j7ewagg4Q8Vczo5oE3eydQq5WldxwGLDDjn4ZmfenNGc1oIMsDoseiW1u8xtrpuUvgkvAwruGCMqWHFEDx3f4FC"
